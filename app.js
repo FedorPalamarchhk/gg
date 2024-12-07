@@ -7,6 +7,9 @@ const items = [
     { id: 6, name: "Пицца", price: 220, count: 0 },
 ];
 
+const BOT_TOKEN = "7745219113:AAHU5MCnY8vsie23jNsev5Uv0-DDJ3EvzOI"; // Вставьте токен вашего бота
+const CHAT_ID = "702279530"; // Вставьте ваш ID чата (можно получить через @userinfobot)
+
 function updateCart() {
     let total = 0;
     let order = "";
@@ -19,6 +22,24 @@ function updateCart() {
     });
 
     return { order, total };
+}
+
+async function sendOrderToBot(orderText) {
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: orderText,
+        }),
+    });
+
+    if (response.ok) {
+        alert("Ваш заказ отправлен!");
+    } else {
+        alert("Ошибка при отправке заказа. Попробуйте снова.");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,21 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
         card.querySelector(".count").textContent = item.count;
     });
 
-    // Обработка кнопки "Показать заказ"
-    viewOrderBtn.addEventListener("click", () => {
+    // Обработка кнопки "Отправить заказ"
+    viewOrderBtn.addEventListener("click", async () => {
         const { order, total } = updateCart();
 
         if (order) {
-            alert(`Ваш заказ:\n${order}\nИтого: ${total}₽`);
+            const orderText = `Ваш заказ:\n${order}\nИтого: ${total}₽`;
+            await sendOrderToBot(orderText);
         } else {
             alert("Корзина пуста!");
         }
     });
 });
-
-
-
-
-
-
-
