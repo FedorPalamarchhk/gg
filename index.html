@@ -1,45 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню заказа</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="container">
-		<div class="inner">
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn1">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn2">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn3">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn4">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn5">Add</button>
-			</div>
-			<div class="item">
-				<img src="1.png" alt="" class="img">
-				<button class="btn" id="btn6">Add</button>
-			</div>
-		</div>
-	</div>
-	<div class="usercard" id="usercard">
-		
-	</div>
+    <div class="app">
+        <header>
+            <h1>Меню напитков и еды</h1>
+        </header>
 
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script src="app.js"></script>
+        <div class="menu">
+            <!-- Товары -->
+            <div class="card">
+                <p>Lit Energy</p>
+                <span class="price">120₽</span>
+                <div class="controls">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="card">
+                <p>Adrenaline Rush 0.449</p>
+                <span class="price">140₽</span>
+                <div class="controls">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="card">
+                <p>Adrenaline Rush 0.25</p>
+                <span class="price">100₽</span>
+                <div class="controls">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="card">
+                <p>Булка с маком</p>
+                <span class="price">70₽</span>
+                <div class="controls">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="card">
+                <p>Булка с корицей</p>
+                <span class="price">70₽</span>
+                <div class="controls">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+            <div class="card">
+                <p>Пицца</p>
+                <span class="price">220₽</span>
+                <div class="controls">
+                    <button class="minus">-</button>
+                    <span class="count">0</span>
+                    <button class="plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <button id="view-order" class="view-order">Показать заказ</button>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
