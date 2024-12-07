@@ -1,62 +1,88 @@
 body {
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	color: var(--tg-theme-text-color);
-	background: var(--tg-theme-bg-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-.container {
-	max-width: 390px;
+.app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
 }
 
-.inner {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 200px 200px 200px;
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.img {
-	width: 150px;
+header h1 {
+    font-size: 24px;
+    color: #555;
 }
 
-.item {
-	text-align: center;
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
 }
 
-.btn {
-	display: inline-block;
-	padding: 10px 20px;
-	border: none;
-	background: rgb(248, 168, 24);
-	border-radius: 10px;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 700;
-
-	transition: background .2s linear;
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.btn:hover {
-	background: lightgreen;
+.card p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
-.usercard {
-	text-align: center;
+.price {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
 }
 
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
 
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
 
+button:active {
+    transform: scale(0.95);
+}
 
+button.minus {
+    background: #dc3545;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.view-order {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
